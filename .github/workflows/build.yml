@@ -18,12 +18,10 @@ jobs:
           sudo chmod 0755 debootstrap/debootstrap
           sudo ln -s $(realpath debootstrap/debootstrap) -t /usr/bin
           sudo ln -s $(realpath debootstrap) -t /usr/share/
-      #- name: install qemu-user-static
-        #run:  sudo apt install qemu-user-static
-
+     
       - name: bootstrap debian aarch64
         run: |
-          sudo debootstrap --arch=arm64 sid /rootfs-build
+          sudo debootstrap --arch=arm64 trixie /rootfs-build
           sudo mount --bind /proc /rootfs-build/proc
           sudo mount --bind /dev /rootfs-build/dev
 
