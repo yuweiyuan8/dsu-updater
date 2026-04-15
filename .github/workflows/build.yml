@@ -1,5 +1,9 @@
 name: build
-on: [pull_request, push]
+on: 
+  push:
+  pull_request:
+  workflow_dispatch:  # 添加这一行即可手动触发
+
 
 jobs:
   build:
